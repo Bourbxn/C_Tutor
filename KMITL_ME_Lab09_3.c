@@ -5,7 +5,7 @@ void isPalindrome(char* string)
 
 	int i=0,length = 0;
 	while(string[i++]!='\0') length++;
-	char newStr[length+1];
+	char newStr[100];
 	int index = 0;
 	for(int i=0;i<length;i++){
 		if(string[i]>='A' && string[i]<='Z'){
@@ -21,7 +21,7 @@ void isPalindrome(char* string)
 			continue;
 		}
 	}
-	newStr[length] = '\0';
+	newStr[index] = '\0';
 
 	p1 = newStr;
 	while (*p1 != '\0') {
@@ -41,7 +41,7 @@ void isPalindrome(char* string)
 	if (p2 > p1)
 		printf("\"%s\" is PALINDROME.",string);
 	else
-		printf("\"%s\" is NOT a Palindrom.",string);
+		printf("\"%s\" is NOT palindrom.",string);
 }
 
 int main()
@@ -51,6 +51,5 @@ int main()
 	printf("Enter a sentence : ");
 	scanf("%[^\n]",str);
 	isPalindrome(str);
-
 	return 0;
 }
