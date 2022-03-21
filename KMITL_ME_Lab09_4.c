@@ -2,11 +2,98 @@
 
 char roman[200];
 void number2roman(int number) {
-    //this function is to convert number num
-    // to roman string as global variable
+    int index = 0;
+    while(number != 0)
+    {
 
+        if (number >= 1000)       // 1000 - m
+        {
+           roman[index++]='m';
+           number -= 1000;
+        }
+
+        else if (number >= 900)   // 900 -  cm
+        {
+           roman[index++]='c';
+           roman[index++]='m';
+           number -= 900;
+        }        
+
+        else if (number >= 500)   // 500 - d
+        {           
+           roman[index++]='d';
+           number -= 500;
+        }
+
+        else if (number >= 400)   // 400 -  cd
+        {
+           roman[index++]='c';
+           roman[index++]='d';
+           number -= 400;
+        }
+
+        else if (number >= 100)   // 100 - c
+        {
+           roman[index++]='c';
+           number -= 100;                       
+        }
+        else if (number >= 90)    // 90 - xc
+        {
+           roman[index++]='x';
+           roman[index++]='c';
+           number -= 90;                                              
+        }
+
+        else if (number >= 50)    // 50 - l
+        {
+           roman[index++]='l';
+           number -= 50;                                                                     
+        }
+
+        else if (number >= 40)    // 40 - xl
+        {
+           roman[index++]='x';
+           roman[index++]='l';     
+           number -= 40;
+        }
+
+        else if (number >= 10)    // 10 - x
+        {
+           roman[index++]='x';
+           number -= 10;           
+        }
+
+        else if (number >= 9)     // 9 - ix
+        {
+           roman[index++]='i';
+           roman[index++]='x';  
+           number -= 9;                         
+        }
+        else if (number >= 5)     // 5 - v
+        {
+           roman[index++]='v';
+           number -= 5;                                     
+        }
+
+        else if (number >= 4)     // 4 - iv
+        {
+           roman[index++]='i';
+           roman[index++]='v';  
+           number -= 4;                                                            
+        }
+
+        else if (number >= 1)     // 1 - i
+        {
+           roman[index++]='i';
+           number -= 1;                                                                                   
+        }
+
+    }
+    roman[index] = '\0';
 
 }
+
+
 int main() {
     int count_i=0, count_v=0, count_x=0, count_l=0, count_c=0, i, num_test;
     int num; // to get input from user
