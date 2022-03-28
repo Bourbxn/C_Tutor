@@ -5,7 +5,6 @@ int main(){
 	printf("Enter 2 whole numbers : ");
 	scanf("%d %d",&num1,&num2);
 	if(num1>num2){
-		printf("Loop");
 		temp = num1;
 		num1 = num2;
 		num2 = temp;
